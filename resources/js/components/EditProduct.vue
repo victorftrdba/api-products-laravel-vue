@@ -31,13 +31,13 @@
             }
         },
         created() {
-            this.axios.get(`http://localhost:8000/api/products/${this.$route.params.id}`).then((res) => {
+            axios.get(`http://localhost:8000/api/products/${this.$route.params.id}`).then((res) => {
                 this.product = res.data;
             });
         },
         methods: {
             updateProduct() {
-                this.axios.patch(`http://localhost:8000/api/products/${this.$route.params.id}`, this.product).then((
+                axios.patch(`http://localhost:8000/api/products/${this.$route.params.id}`, this.product).then((
                     res) => {
                         this.$router.push({
                             name: 'home'
